@@ -18,6 +18,6 @@ public class MongoDBConfig {
     CommandLineRunner commandLineRunner(PersonRepository personRepository) {
         List<Debtor> debtors = new ArrayList<>();
         debtors.add(new Debtor("Debtor", 20, 20));
-        return args -> personRepository.save(new Person("Test", 20, 20, debtors));
+        return args -> personRepository.save(new Person("Test", 20, 20, debtors, "jakozian7@gmail.com", "password123"));
     }
 }

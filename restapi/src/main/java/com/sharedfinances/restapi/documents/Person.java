@@ -11,8 +11,12 @@ public class Person {
     private double amount;
     private double total;
     private List<Debtor> debtors;
+    private String email;
+    private String passwort;
 
-    public Person(String name, double amount, double total, List<Debtor> debtors) {
+    public Person(String name, double amount, double total, List<Debtor> debtors, String email, String passwort) {
+        this.email = email;
+        this.passwort = passwort;
         this.name = name;
         this.amount = amount;
         this.total = total;
@@ -50,5 +54,21 @@ public class Person {
 
     public void setDebtors(List<Debtor> debtors) {
         this.debtors = debtors;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPasswort() {
+        return passwort;
+    }
+
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
     }
 }
