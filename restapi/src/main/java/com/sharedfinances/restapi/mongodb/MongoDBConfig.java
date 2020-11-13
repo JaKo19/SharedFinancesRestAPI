@@ -14,10 +14,10 @@ import java.util.List;
 @EnableMongoRepositories(basePackageClasses = PersonRepository.class)
 @Configuration
 public class MongoDBConfig {
-//    @Bean
-//    CommandLineRunner commandLineRunner(PersonRepository personRepository) {
-//        List<Debtor> debtors = new ArrayList<>();
-//        debtors.add(new Debtor("Debtor", 20, 20));
-//        return args -> personRepository.save(new Person("Test", 20, 20, debtors));
-//    }
+    @Bean
+    CommandLineRunner commandLineRunner(PersonRepository personRepository) {
+        List<Debtor> debtors = new ArrayList<>();
+        debtors.add(new Debtor("Debtor", 20, 20));
+        return args -> personRepository.save(new Person("Test", 20, 20, debtors));
+    }
 }
