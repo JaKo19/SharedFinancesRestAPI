@@ -38,14 +38,14 @@ public class PersonController {
         return repository.saveAll(newList);
     }
 
-    @PutMapping("/list/{name}")
-    Person updateList(@RequestBody Person newPerson, @PathVariable String name) {
-        return repository.findByName(name).map(person -> {
-            person.setAmount(newPerson.getAmount());
-            person.setTotal(newPerson.getTotal());
-            person.setDebtors(newPerson.getDebtors());
-            return person;
-        }).get();
-    }
+//    @PutMapping("/list/{name}")
+//    Person updateList(@RequestBody Person newPerson, @PathVariable String name) {
+//        return repository.findByName(name).map(person -> {
+//            person.setAmount(newPerson.getAmount());
+//            person.setTotal(newPerson.getTotal());
+//            person.setDebtors(newPerson.getDebtors());
+//            return person;
+//        }).get();
+//    }
 
 }
