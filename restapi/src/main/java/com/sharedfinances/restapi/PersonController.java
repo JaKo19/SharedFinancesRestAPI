@@ -34,6 +34,7 @@ public class PersonController {
 
     @PostMapping("/list/all")
     List<Person> updateList(@RequestBody List<Person> newList) {
+        repository.deleteAll();
         return repository.saveAll(newList);
     }
 
