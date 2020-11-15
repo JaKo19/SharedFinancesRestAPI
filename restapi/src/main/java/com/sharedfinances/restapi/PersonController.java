@@ -33,7 +33,7 @@ public class PersonController {
     }
 
     @PostMapping("/list/all")
-    List<Person> updateList(@RequestBody List<Person> newList, @PathVariable String name) {
+    List<Person> updateList(@RequestBody List<Person> newList) {
         return repository.saveAll(newList);
     }
 
