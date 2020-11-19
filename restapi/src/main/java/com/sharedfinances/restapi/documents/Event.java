@@ -9,11 +9,13 @@ public class Event {
 
     private String code;
     private String name;
+    private double totalAmount;
     private List<Person> persons;
 
-    public Event(String name, String code, List<Person> persons) {
+    public Event(String name, String code, double totalAmount, List<Person> persons) {
         this.name = name;
         this.code = code;
+        this.totalAmount = totalAmount;
         this.persons = persons;
     }
 
@@ -35,6 +37,14 @@ public class Event {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     public List<Person> getPersons() {
