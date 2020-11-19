@@ -1,7 +1,8 @@
 package com.sharedfinances.restapi.mongodb;
 
-import com.sharedfinances.restapi.PersonRepository;
+import com.sharedfinances.restapi.EventRepository;
 import com.sharedfinances.restapi.documents.Debtor;
+import com.sharedfinances.restapi.documents.Event;
 import com.sharedfinances.restapi.documents.Person;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -11,13 +12,15 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import java.util.ArrayList;
 import java.util.List;
 
-@EnableMongoRepositories(basePackageClasses = PersonRepository.class)
+@EnableMongoRepositories(basePackageClasses = EventRepository.class)
 @Configuration
 public class MongoDBConfig {
     @Bean
-    CommandLineRunner commandLineRunner(PersonRepository personRepository) {
+    CommandLineRunner commandLineRunner(EventRepository personRepository) {
+        List<Person> persons = new ArrayList<>();
         List<Debtor> debtors = new ArrayList<>();
-        debtors.add(new Debtor("Debtor", 20, 20));
-        return args -> personRepository.save(new Person("Test", 20, 20, debtors, "test@gmail.com", "password123"));
+        debtors.add(new Debtor("Jonathan", 20, 20));
+        persons.add(new Person("Jannis", 20, 20, debtors, "j@j.com", "123"));
+        return args -> personRepository.save(new Event("Test Event", "123456", persons));
     }
 }
